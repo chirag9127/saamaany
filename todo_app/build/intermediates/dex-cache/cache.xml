@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/chiragmahapatra/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_a105805aaf8c0b3deba919e0dd80a1b538a3f768/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="2616527940231070e45ede9718e6f4027284540e">
+        <dex dex="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_826017b9b1e309e1eb4e4a0e27112f5cc4ce7b48/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_bcab61c8d59fb60d390d1116c9441d26fe15f512/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_630e8cbd21948421bd1967dd437bea5988f52c3d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_9cb198341806e372ebeeb512c46c96d7b33606b5/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.4.0_b04a6b06bc3dc461a9982c0a5b19c82bbee34c3b/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chiragmahapatra/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-io/1.3.2/b6dde38349ba9bb5e6ea6320531eae969985dae5/commons-io-1.3.2.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="b6dde38349ba9bb5e6ea6320531eae969985dae5">
+        <dex dex="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/commons-io-1.3.2_24cbf9ac3eb728acdc4ed7f3b296218c81531f59/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_7513aec52b434cd1793bea10e5f3bb2402fd416d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="44cd3ac276fc810f183c1ff5fb198cb7a162bc16">
+        <dex dex="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c5a8684f44d5612281067cc747e42871c5da9a9a/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.4.0_415205656c40ed1789a38514ee7c3ca1aace4e86/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/chiragmahapatra/AndroidStudioProjects/todo_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_bcdcc2617ec358288cbba6a5d9e34bd6125b12f3/classes.dex" />
+    </item>
+
+</items>
