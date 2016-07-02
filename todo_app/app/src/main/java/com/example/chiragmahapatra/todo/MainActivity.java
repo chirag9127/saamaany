@@ -7,22 +7,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 
-import org.apache.commons.io.FileUtils;
-
-import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ArrayList<String> items;
-    private ArrayAdapter<String> itemsAdapter;
+    private ArrayList<Item> items;
+    private ItemAdapter itemsAdapter;
     private ListView lvItems;
     public final static String KEY = "itemName";
     public final static String POSITION = "position";
+    public final static String OPERATION = "operation";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,19 +31,23 @@ public class MainActivity extends AppCompatActivity {
 
         lvItems = (ListView) findViewById(R.id.lvItems);
         readItems();
-        itemsAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, items);
+        System.out.println(items);
+        itemsAdapter = new ItemAdapter(this, items);
         lvItems.setAdapter(itemsAdapter);
+        setupListViewListener();
 
         final Intent intent = getIntent();
-        String message = "" + intent.getStringExtra(EditActivity.FROM);
-        if (message.equals("edit_activity")) {
+        String message = "" + intent.getStringExtra(AddEditActivity.FROM);
+        if (message.equals("edit")) {
             String position = intent.getStringExtra(POSITION);
             int editPosition = Integer.parseInt(position);
-            String editedItemValue = intent.getStringExtra(EditActivity.EDITED_ITEM_VALUE);
+            Item editedItemValue = (Item) intent.getSerializableExtra(AddEditActivity.EDITED_ITEM_VALUE);
             editItem(editPosition, editedItemValue);
+        } else if (message.equals("add")) {
+            Item addItemValue = (Item) intent.getSerializableExtra(AddEditActivity.EDITED_ITEM_VALUE);
+            addItem(addItemValue);
         }
-        setupListViewListener();
+
     }
 
     @Override
@@ -53,18 +57,21 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public void editItem(int position, String editValue) {
+    public void editItem(int position, Item editedItem) {
         items.remove(position);
-        items.add(position, editValue);
+        items.add(position, editedItem);
+        writeItems();
+    }
+
+    public void addItem(Item addedItem) {
+        items.add(addedItem);
         writeItems();
     }
 
     public void onAddItem(View v) {
-        EditText etNewItem = (EditText) findViewById(R.id.etNewItem);
-        String itemText = etNewItem.getText().toString();
-        itemsAdapter.add(itemText);
-        etNewItem.setText("");
-        writeItems();
+        Intent intent = new Intent(MainActivity.this, AddEditActivity.class);
+        intent.putExtra(OPERATION, "add");
+        startActivity(intent);
     }
 
     @Override
@@ -103,8 +110,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position,
                                             long id) {
-                        Intent intent = new Intent(MainActivity.this, EditActivity.class);
-                        String itemTobeEdited = items.get(position);
+                        Intent intent = new Intent(MainActivity.this, AddEditActivity.class);
+                        Item itemTobeEdited = items.get(position);
+                        intent.putExtra(OPERATION, "edit");
                         intent.putExtra(KEY, itemTobeEdited);
                         intent.putExtra(POSITION, Integer.toString(position));
                         startActivity(intent);
@@ -114,22 +122,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void readItems() {
-        File filesDir = getFilesDir();
-        File todoFile = new File(filesDir, "todo.txt");
         try {
-            items = new ArrayList<String>(FileUtils.readLines(todoFile));
-        } catch (IOException e) {
-            items = new ArrayList<String>();
+            FileInputStream fileIn = new FileInputStream(getFilesDir() + "itemDetails.ser");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            items = (ArrayList<Item>) in.readObject();
+            in.close();
+            fileIn.close();
+
+        } catch (IOException ioe) {
+            items = new ArrayList<Item>();
+            ioe.printStackTrace();
+        } catch (ClassNotFoundException cnfe) {
+            items = new ArrayList<Item>();
+            cnfe.printStackTrace();
         }
     }
 
     private void writeItems() {
-        File filesDir = getFilesDir();
-        File todoFile = new File(filesDir, "todo.txt");
         try {
-            FileUtils.writeLines(todoFile, items);
-        } catch (IOException e) {
-            e.printStackTrace();
+                FileOutputStream fileOut = new FileOutputStream(getFilesDir() + "itemDetails.ser");
+                ObjectOutputStream out = new ObjectOutputStream(fileOut);
+                out.writeObject(items);
+                /*
+                for(Item e : items) {
+                    out.writeObject(e);
+                }*/
+                out.close();
+                fileOut.close();
+        }catch (IOException i) {
+                i.printStackTrace();
         }
     }
 }
